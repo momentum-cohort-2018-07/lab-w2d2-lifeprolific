@@ -172,6 +172,14 @@ function addAge (userInput, dateInput) {
 // length, the first being a list of names and the second being a list of dates of
 // birth, and returns a new array of objects created from those original arrays.
 
+function createUsers (names, dobs) {
+  var output = []
+  for (var index = 0; index < names.length; index++) {
+    output.push(createUser(names[index], dobs[index]))
+  }
+  return output
+}
+
 // 10. Create a function called "averageAge" that takes an array of users and
 // a Date object and returns the average age in years of the users on that date.
 // You do not have to handle the situation in which the current date is before
