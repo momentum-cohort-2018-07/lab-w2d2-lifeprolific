@@ -46,7 +46,7 @@ function minimum(numbers) {
   var output = undefined
   for (var index = 0; index < numbers.length; index++) {
     var thisNumber = numbers[index]
-    if (typeof(output) === 'undefined') {
+    if (typeof (output) === 'undefined') {
       output = thisNumber
     }
     else if (thisNumber < output) {
@@ -134,13 +134,31 @@ function selectionSortOpposite(arrayInput) {
 // those values.
 
 function createUser(nameInput, dateInput) {
-  var output = {name:nameInput, dob:dateInput}
+  var output = { name: nameInput, dob: dateInput }
   return output
 }
 
 // 7. Create a function called "calculateAge" that takes a user created from
 // createUser and a Date object considered the current date, and calculates the user's
 // age in years on that date. You can use your code from yesterday's homework.
+
+function calculateAge(userInput, dateInput) {
+
+  function howOld(birthDate, currentDate) {
+    if (birthDate > currentDate) {
+      return
+    }
+    else {
+      return Math.floor(jSDateToGTDate(currentDate) - jSDateToGTDate(birthDate))
+    }
+
+    function jSDateToGTDate(date) {
+      return date.getFullYear() + 0.01 * date.getMonth() + .0001 * date.getDate()
+    }
+  }
+
+  return howOld(userInput.dob, dateInput)
+}
 
 // 8. Create a function called "addAge" that takes a user created from createUser
 // and a Date object and adds a new key on the user object, "age", with the age
