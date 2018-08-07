@@ -12,6 +12,16 @@ function sum (numbers) {
 // 2. Create a function called "average" that takes an array of numbers
 // and returns the average of those numbers.
 
+function average (numbers) {
+  var output = 0
+  if (numbers.length > 0) {
+    for (var index = 0; index < numbers.length; index++) {
+      output += numbers[index]
+    }
+    return output/numbers.length
+  }
+}
+
 // 3. Create a function called "intersection" that takes two arrays and
 // returns a new array that contains the elements found in both arrays.
 // The order they are in does not matter, but no duplicates should be
