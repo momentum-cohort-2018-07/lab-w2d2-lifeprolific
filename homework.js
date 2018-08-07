@@ -45,7 +45,7 @@ function intersection(array1, array2) {
 function minimum(numbers) {
   var output = undefined
   for (var index = 0; index < numbers.length; index++) {
-    let thisNumber = numbers[index]
+    var thisNumber = numbers[index]
     if (typeof(output) === 'undefined') {
       output = thisNumber
     }
@@ -79,6 +79,55 @@ function minimum(numbers) {
 // Note 2: Selection sort can be implemented using one array. Read the explanation at
 // https://courses.cs.vt.edu/csonline/Algorithms/Lessons/SelectionSort/index.html
 // to see how. This may make more sense to you.
+
+function selectionSort(arrayInput) {
+
+  var arrayCopy = arrayInput.slice(0)
+
+  // iterate through whole array
+  for (var index1 = 0; index1 < arrayCopy.length; index1++) {
+
+    //iterate through remainder of array to find next minimum
+    var minimumIndex = index1
+    for (var index2 = index1; index2 < arrayCopy.length; index2++) {
+      if (arrayCopy[index2] < arrayCopy[minimumIndex]) {
+        minimumIndex = index2
+      }
+    }
+
+    //remove next minimum from array and add to beginning of array
+    var minimum = arrayCopy[minimumIndex]
+    arrayCopy.splice(minimumIndex, 1)
+    arrayCopy.splice(index1, 0, minimum)
+  }
+
+  return arrayCopy
+}
+
+// Greg's note: this works, but in a kindof opposite-land way
+function selectionSortOpposite(arrayInput) {
+
+  var arrayCopy = arrayInput.slice(0)
+
+  // iterate through whole array
+  for (var index1 = 0; index1 < arrayCopy.length; index1++) {
+
+    //iterate through remainder of array to find next minimum
+    var minimumIndex = index1
+    for (var index2 = index1; index2 < arrayCopy.length; index2++) {
+      if (arrayCopy[index2] > arrayCopy[minimumIndex]) {
+        minimumIndex = index2
+      }
+    }
+
+    //remove next minimum from array and add to beginning of array
+    var minimum = arrayCopy[minimumIndex]
+    arrayCopy.splice(minimumIndex, 1)
+    arrayCopy.unshift(minimum)
+  }
+
+  return arrayCopy
+}
 
 // 6. Create a function called "createUser" that takes a name and a Date object
 // and returns an object with the keys "name" and "dob" (date of birth) with
