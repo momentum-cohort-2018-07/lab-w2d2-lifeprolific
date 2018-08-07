@@ -2,8 +2,11 @@
 // returns the sum of those numbers.
 
 function sum (numbers) {
-  console.log('numbers', numbers)
-  return 0
+  var output = 0
+  for (var index = 0; index < numbers.length; index++) {
+    output += numbers[index]
+  }
+  return output
 }
 
 // 2. Create a function called "average" that takes an array of numbers
