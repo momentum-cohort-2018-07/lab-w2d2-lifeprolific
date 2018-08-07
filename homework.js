@@ -133,6 +133,11 @@ function selectionSortOpposite(arrayInput) {
 // and returns an object with the keys "name" and "dob" (date of birth) with
 // those values.
 
+function createUser(nameInput, dateInput) {
+  var output = {name:nameInput, dob:dateInput}
+  return output
+}
+
 // 7. Create a function called "calculateAge" that takes a user created from
 // createUser and a Date object considered the current date, and calculates the user's
 // age in years on that date. You can use your code from yesterday's homework.
