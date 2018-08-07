@@ -164,6 +164,10 @@ function calculateAge(userInput, dateInput) {
 // and a Date object and adds a new key on the user object, "age", with the age
 // in years the user was on that date.
 
+function addAge (userInput, dateInput) {
+  userInput.age = calculateAge(userInput, dateInput)
+}
+
 // 9. Create a function called "createUsers" that takes two arrays of equal
 // length, the first being a list of names and the second being a list of dates of
 // birth, and returns a new array of objects created from those original arrays.
