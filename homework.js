@@ -1,7 +1,7 @@
 // 1. Create a function called "sum" that takes an array of numbers and
 // returns the sum of those numbers.
 
-function sum (numbers) {
+function sum(numbers) {
   var output = 0
   for (var index = 0; index < numbers.length; index++) {
     output += numbers[index]
@@ -12,13 +12,13 @@ function sum (numbers) {
 // 2. Create a function called "average" that takes an array of numbers
 // and returns the average of those numbers.
 
-function average (numbers) {
+function average(numbers) {
   var output = 0
   if (numbers.length > 0) {
     for (var index = 0; index < numbers.length; index++) {
       output += numbers[index]
     }
-    return output/numbers.length
+    return output / numbers.length
   }
 }
 
@@ -26,6 +26,18 @@ function average (numbers) {
 // returns a new array that contains the elements found in both arrays.
 // The order they are in does not matter, but no duplicates should be
 // in the returned array, even if they were in the input.
+
+function intersection(array1, array2) {
+  var output = []
+  for (var index1 = 0; index1 < array1.length; index1++) {
+    for (var index2 = 0; index2 < array2.length; index2++) {
+      if (array1[index1] === array2[index2] && !output.includes(array1[index1])) {
+        output.push(array1[index1])
+      }
+    }
+  }
+  return output
+}
 
 // 4. Create a function called "minimum" that takes an array of numbers and
 // returns the smallest number in that array.
