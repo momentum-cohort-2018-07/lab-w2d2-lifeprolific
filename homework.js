@@ -42,6 +42,20 @@ function intersection(array1, array2) {
 // 4. Create a function called "minimum" that takes an array of numbers and
 // returns the smallest number in that array.
 
+function minimum(numbers) {
+  var output = undefined
+  for (var index = 0; index < numbers.length; index++) {
+    let thisNumber = numbers[index]
+    if (typeof(output) === 'undefined') {
+      output = thisNumber
+    }
+    else if (thisNumber < output) {
+      output = thisNumber
+    }
+  }
+  return output
+}
+
 // 5. There are many techniques to sort arrays in programming. Your programming
 // language will likely include the ability to do this. We are going to
 // implement sorting ourselves, however.
